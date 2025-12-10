@@ -44,12 +44,28 @@ namespace IpcimWPF
             {
                 string[] darabok = sor.Split(";");
                 string domainName = darabok[0];
-                string ipAddress = darabok[0];
+                string ipAddress = darabok[1];
 
                 domainok.Add(new Domain(domainName, ipAddress));
             }
 
             dataGrid.ItemsSource = domainok;
+        }
+
+        private void bevitel(object sender, RoutedEventArgs e)
+        {
+            if(domainName.Text.Length > 0 && ipAddress.Text.Length > 0)
+            {
+                Domain newDomain = new Domain(domainName.Text, ipAddress.Text);
+                domainok.Add(newDomain);
+                dataGrid.Items.Refresh();
+                domainName.Text = "";
+                ipAddress.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Mindkét mező kitöltése kötelező!","Hiba",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
         }
     }
 }
