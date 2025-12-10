@@ -18,7 +18,7 @@
             <Label Content="IP cím:" Margin="5"/>
             <TextBox x:Name="ipAddress" Width="150" Height="20" Margin="5"/>
             <Button Content="Bevitel" Width="50" HorizontalAlignment="Left" Margin="5" Click="bevitel"/>
-            <Button Content="Mentés" Width="50" HorizontalAlignment="Left" Margin="5"/>
+            <Button Content="Mentés" Width="50" HorizontalAlignment="Left" Margin="5" Click="mentes"/>
         </StackPanel>
     </Grid>
 </Window>
